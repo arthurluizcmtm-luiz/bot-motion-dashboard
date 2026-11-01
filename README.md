@@ -1,14 +1,16 @@
-# Welcome to your Lovable project
+# Bot Motion Dashboard
+
+Eu quero por enquanto só que você faça um dashbord, ele tem que ser bem bonito e com um visual maneiro sabe, por que ele vai ser feito para um bot, ele tem que ter movimento nas abas e tals, para ficar bom e tals, eu quero que você faça da melhor maneira possivel um dashboard que pareça ser tão bom, só um dashboard, sem nome ainda sabe, só para eu ver como ele vai ficar
 
 This project was built with [Lovable](https://lovable.dev).
 
 ## Build with Lovable
 
-Open your project in the [Lovable editor](https://lovable.dev) and keep building.
+Continue developing this project in the [Lovable editor](https://lovable.dev/projects/a1571af4-bb13-49d9-9704-6faa26309fee).
 
 - **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
-- **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
+- **Stay in sync**: every change made in Lovable is committed straight to this repository.
+- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
 
 ## Development
 
@@ -20,10 +22,3 @@ cd <repository-name>
 npm i
 npm run dev
 ```
-
-## Built with
-
-- TanStack Start
-- TypeScript
-- React
-- Tailwind CSS
