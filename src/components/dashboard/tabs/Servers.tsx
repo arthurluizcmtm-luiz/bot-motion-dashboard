@@ -90,7 +90,7 @@ export function Servers() {
                     .split(" ")
                     .slice(0, 2)
                     .map((w) => w[0])
-                    .join("")}
+                    .join("").toUpperCase()}
                 </div>
                 <div className="mt-3 flex items-start justify-between gap-3">
                   <div className="min-w-0">
