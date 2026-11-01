@@ -15,7 +15,7 @@ const rulesInit = [
   { id: "flood", icon: Zap, name: "Anti-flood", desc: "Limita mensagens por segundo", on: false },
 ];
 
-const actionTone: Record<string, Tone> = { Ban: "destructive", Mute: "warning", Aviso: "info", Kick: "warning" };
+const actionTone: Record<(typeof modCases)[number]["action"], Tone> = { Ban: "destructive", Mute: "warning", Aviso: "info", Kick: "warning" };
 
 export function Moderation() {
   const [rules, setRules] = useState(rulesInit);

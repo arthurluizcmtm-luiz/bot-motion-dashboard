@@ -187,7 +187,7 @@ function BotStatusCard() {
 
 const RANGES = ["24h", "7d", "30d"] as const;
 
-function ActivityChart({ className }: { className?: string }) {
+function ActivityChart({ className }: { className?: string | undefined }) {
   const [range, setRange] = useState<Range>("24h");
   const data = useMemo(() => activitySeries(range), [range]);
   const total = data.reduce((a, b) => a + b.comandos, 0);
@@ -246,7 +246,7 @@ function ActivityChart({ className }: { className?: string }) {
 }
 
 function TopCommands() {
-  const max = topCommands[0].uses;
+  const max = topCommands[0]?.uses ?? 1;
   return (
     <Panel>
       <PanelHeader title="Mais usados" subtitle="Top comandos da semana" />
@@ -289,14 +289,14 @@ const feedPool: Omit<FeedItem, "id">[] = [
   { icon: LogIn, tone: "primary", text: "Bot adicionado em Torre de Estudos", meta: "7.720 membros" },
 ];
 
-function LiveFeed({ className }: { className?: string }) {
+function LiveFeed({ className }: { className?: string | undefined }) {
   const [items, setItems] = useState<FeedItem[]>(() =>
     feedPool.slice(0, 5).map((f, i) => ({ ...f, id: i })),
   );
   useEffect(() => {
     let n = 100;
     const t = setInterval(() => {
-      const next = feedPool[Math.floor(Math.random() * feedPool.length)];
+      const next = feedPool[Math.floor(Math.random() * feedPool.length)]!;
       setItems((prev) => [{ ...next, id: n++ }, ...prev].slice(0, 5));
     }, 2800);
     return () => clearInterval(t);

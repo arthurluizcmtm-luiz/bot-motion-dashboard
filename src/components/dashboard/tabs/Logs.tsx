@@ -32,7 +32,7 @@ export function Logs() {
     if (paused) return;
     let n = 1000;
     const t = setInterval(() => {
-      const tpl = logTemplates[Math.floor(Math.random() * logTemplates.length)];
+      const tpl = logTemplates[Math.floor(Math.random() * logTemplates.length)]!;
       const d = new Date();
       const time = d.toLocaleTimeString("pt-BR", { hour12: false });
       setLines((prev) => [...prev, { id: n++, time, ...tpl }].slice(-80));

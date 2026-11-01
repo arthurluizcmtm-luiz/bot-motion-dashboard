@@ -38,14 +38,14 @@ export function Panel({
   children,
   interactive = false,
 }: {
-  className?: string;
+  className?: string | undefined;
   children: ReactNode;
   interactive?: boolean;
 }) {
   return (
     <motion.div
       variants={fadeUp}
-      whileHover={interactive ? { y: -4 } : undefined}
+      {...(interactive ? { whileHover: { y: -4 } } : {})}
       transition={{ type: "spring", stiffness: 300, damping: 22 }}
       className={cn("glass group relative overflow-hidden rounded-2xl p-5", className)}
     >
@@ -82,10 +82,10 @@ export function CountUp({
   suffix = "",
 }: {
   value: number;
-  decimals?: number;
-  duration?: number;
-  prefix?: string;
-  suffix?: string;
+  decimals?: number | undefined;
+  duration?: number | undefined;
+  prefix?: string | undefined;
+  suffix?: string | undefined;
 }) {
   const [display, setDisplay] = useState(0);
   const current = useRef(0);
@@ -126,7 +126,7 @@ export function Sparkline({
   const h = 44;
   const max = Math.max(...data);
   const min = Math.min(...data);
-  const pts = data.map((v, i) => [
+  const pts = data.map((v, i): [number, number] => [
     (i / (data.length - 1)) * w,
     h - 4 - ((v - min) / (max - min || 1)) * (h - 8),
   ]);
