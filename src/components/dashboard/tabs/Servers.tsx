@@ -85,7 +85,7 @@ export function Servers() {
                 )}
               </div>
               <div className="px-5 pb-5">
-                <div className={cn("-mt-7 flex h-14 w-14 items-center justify-center rounded-2xl border-4 border-card font-display text-lg font-bold text-foreground", s.banner)}>
+                <div className={cn("relative z-10 -mt-7 flex h-14 w-14 items-center justify-center rounded-2xl border-4 border-card font-display text-lg font-bold text-foreground", s.banner)}>
                   {s.name
                     .split(" ")
                     .slice(0, 2)
